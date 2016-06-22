@@ -13,7 +13,7 @@
 
         public const string RemoveNode = @"delete * from NodeList where Value=@Value and UserId=@UserId";
 
-        public const string CheckNodeId = @"Select top 1 * from NodeList where Value=@Value and UserId=@UserId";
+        public const string CheckNodeId = @"Select top 1 Id from NodeList where Value=@Value and UserId=@UserId";
 
         public const string RemoveTree = @"Delete from NodeList where UserId=@UserId";
 

@@ -67,7 +67,7 @@ namespace BusinessLogic.Impl
                 UserId = data.UserId
             };
 
-            if (!_repository.CheckIfValueExists(checkData))
+            if (_repository.CheckIfValueExists(checkData)==Guid.Empty)
             {
                 Node root = AssembleTree(data.UserId);
                 Node neededNode = new Node();
@@ -190,7 +190,8 @@ namespace BusinessLogic.Impl
                 UserId = data.UserId
             };
 
-            if (!_repository.CheckIfValueExists(checkData))
+            var nodeId = _repository.CheckIfValueExists(checkData);
+            if (nodeId == Guid.Empty|| nodeId == data.NodeId)
             {
                 UpdateNodeRequestDao updateData =
                     _mapperHelper.GetValue<ChangeDataRequestDto, UpdateNodeRequestDao>(data);

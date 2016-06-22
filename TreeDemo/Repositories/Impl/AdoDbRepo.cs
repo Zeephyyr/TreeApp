@@ -152,9 +152,9 @@ namespace Repositories.Impl
             }
         }
 
-        public bool CheckIfValueExists(CheckIfValueExistsRequestDao data)
+        public Guid CheckIfValueExists(CheckIfValueExistsRequestDao data)
         {
-            bool result = false;
+            Guid result = Guid.Empty;
             using (SqlConnection sql = new SqlConnection(_conStr))
             {
                 sql.Open();
@@ -168,7 +168,10 @@ namespace Repositories.Impl
 
                     SqlDataReader r = cmd.ExecuteReader();
                     if (r.HasRows)
-                        result = true;
+                    {
+                        r.Read();
+                        result = r.GetGuid(0);
+                    }
                 }
                 sql.Close();
             }

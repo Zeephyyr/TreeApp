@@ -1,4 +1,6 @@
-﻿namespace Repositories.Contract
+﻿using System;
+
+namespace Repositories.Contract
 {
     public interface IRepository
     {
@@ -12,7 +14,7 @@
 
         void UpdateNode(UpdateNodeRequestDao data);
 
-        bool CheckIfValueExists(CheckIfValueExistsRequestDao data);
+        Guid CheckIfValueExists(CheckIfValueExistsRequestDao data);
 
         void RemoveTree(RemoveTreeRequestDao data);
 

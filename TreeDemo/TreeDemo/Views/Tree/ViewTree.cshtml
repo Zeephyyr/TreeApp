@@ -43,7 +43,18 @@
 }
 
 <div class="jumbotron">
-    <p>Extremums: Min - @values.Min, Max - @values.Max, Sum - @values.Sum</p>
+    <p>Extremums:</p>
+    @using (Html.BeginForm("ManageNode", "Tree", FormMethod.Get))
+    {
+        <input type="hidden" value="@values.Min.Id" name="nodeId"/>
+        <input class="btn btn-default" type="submit" value="Min node - @values.Min.DigitValue @values.Min.StringValue" />
+    }
+    @using (Html.BeginForm("ManageNode", "Tree", FormMethod.Get))
+    {
+        <input type="hidden" value="@values.Max.Id" name="nodeId" />
+        <input class="btn btn-default" type="submit" value="Max node - @values.Max.DigitValue @values.Max.StringValue" />
+    }
+    <p>Sum - @values.Sum</p>
     <p class="lead">@ShowTree(node)</p>
 </div>
 

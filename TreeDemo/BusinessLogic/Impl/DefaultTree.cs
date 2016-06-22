@@ -46,15 +46,16 @@ namespace BusinessLogic.Impl
         public GetKeyValuesResponseDto GetKeyValues(GetKeyValuesRequestDto data)
         {
             Node root = AssembleTree(data.UserId);
+            NodeResponseDto response = _mapperHelper.GetValue<Node, NodeResponseDto>(root);
 
             GetKeyValuesResponseDto result = new GetKeyValuesResponseDto
             {
-                Max = root.DigitValue,
-                Min = root.DigitValue,
+                Max = response,
+                Min = response,
                 Sum = 0
             };
 
-            GetKeyValuesInternal(ref result, root);
+            GetKeyValuesInternal(ref result, response);
 
             return result;
         }
@@ -390,15 +391,15 @@ namespace BusinessLogic.Impl
             }
         }
 
-        private void GetKeyValuesInternal(ref GetKeyValuesResponseDto currentResult, Node root)
+        private void GetKeyValuesInternal(ref GetKeyValuesResponseDto currentResult, NodeResponseDto root)
         {
-            if (root.DigitValue < currentResult.Min)
+            if (root.DigitValue < currentResult.Min.DigitValue)
             {
-                currentResult.Min = root.DigitValue;
+                currentResult.Min = root;
             }
-            if (root.DigitValue > currentResult.Max)
+            if (root.DigitValue > currentResult.Max.DigitValue)
             {
-                currentResult.Max = root.DigitValue;
+                currentResult.Max = root;
             }
             currentResult.Sum += root.DigitValue;
 

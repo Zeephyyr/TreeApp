@@ -2,9 +2,9 @@
 {
     public class GetKeyValuesResponseDto
     {
-        public int Max { get; set; }
+        public NodeResponseDto Max { get; set; }
 
-        public int Min { get; set; }
+        public NodeResponseDto Min { get; set; }
 
         public int Sum { get; set; }
     }

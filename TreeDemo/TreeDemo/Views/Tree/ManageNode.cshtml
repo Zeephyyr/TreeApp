@@ -1,0 +1,60 @@
+﻿@model ChangeDataRequestDto
+@using DataTransfer
+
+@{
+    ViewBag.Title = "ManageNode";
+    NodeResponseDto activeNode = ViewBag.Node;
+    Model.DigitValue = activeNode.DigitValue;
+    Model.StringValue = activeNode.StringValue;
+    Model.NodeId = activeNode.Id;
+}
+
+<h2>Manage Node</h2>
+<dl class="dl-horizontal">
+    <dt>Integer value:</dt>
+    <dd>@activeNode.DigitValue</dd>
+    <dt>String value:</dt>
+    <dd>@activeNode.StringValue</dd>
+</dl>
+<hr/>
+<dl class="dl-horizontal">
+    <dt>Parent data:</dt>
+    @if (activeNode.Parent != null)
+    {
+        <dd>@activeNode.Parent.DigitValue @activeNode.Parent.StringValue @activeNode.Parent.Id</dd>
+    }
+    else
+    {
+        <dd>It is a root node, no parents</dd>
+    }
+
+    <dt>Current generation relatively the root</dt>
+    <dd>@activeNode.Generation</dd>
+
+    @if (activeNode.Children != null && activeNode.Children.Count > 1)
+    {
+        <dt>Total children</dt>
+        <dd>@activeNode.Children.Count</dd>
+    }
+    else
+    {
+        <p>No children currently</p>
+    }
+</dl>
+<hr/>
+    @using (Html.BeginForm("ChangeData", "Tree", FormMethod.Post))
+    {
+        <p>@Html.LabelFor(m => m.DigitValue)</p>
+        <p>@Html.TextBoxFor(m => m.DigitValue)</p>
+        <p>@Html.LabelFor(m => m.StringValue)</p>
+        <p>@Html.TextBoxFor(m => m.StringValue)</p>
+        @Html.HiddenFor(m => m.NodeId)
+        <input class="btn btn-default" type="submit" value="Modify Node" style="width:200px" />
+    }
+
+    @using (Html.BeginForm("RemoveNode", "Tree", FormMethod.Post))
+    {
+        <input type="hidden" value="@activeNode.Id.ToString()" name="nodeId" />
+        <input class="btn btn-default" type="submit" value="Remove Node" style="width: 200px" />
+    }
+

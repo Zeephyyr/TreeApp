@@ -1,0 +1,13 @@
+TreeDemo/IoC/bin/
+TreeDemo/Logging/obj/
+TreeDemo/BusinessLogic/obj/
+TreeDemo/DataTransfer/obj/
+TreeDemo/IoC/obj/
+TreeDemo/BusinessLogic/bin/
+TreeDemo/Mapping/obj/
+TreeDemo/Mapping/bin/
+TreeDemo/Nodes/obj/
+TreeDemo/Repositories/obj/
+TreeDemo/Repositories/bin/Debug/EntityFramework.xml
+TreeDemo/TreeDemo/bin/
+TreeDemo/TreeDemo/obj/

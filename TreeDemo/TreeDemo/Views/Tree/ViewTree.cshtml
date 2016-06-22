@@ -1,0 +1,58 @@
+﻿@using DataTransfer
+
+@{
+    ViewBag.Title = "ViewTree";
+    Guid rootNodeId = ViewBag.NewTreeId ?? Guid.Empty;
+    NodeResponseDto node = ViewBag.Tree;
+    GetKeyValuesResponseDto values = ViewBag.KeyValues;
+}
+
+<h2>View Tree</h2>
+@if (rootNodeId != Guid.Empty)
+{
+    <p>Created new tree with root id - @rootNodeId</p>
+}
+
+@helper ShowTree(NodeResponseDto node)
+{
+    <table>
+        <thead>
+            @node.WhiteSpace
+        </thead>
+        <thead>
+            @using (Html.BeginForm("ManageNode", "Tree", FormMethod.Get))
+            {
+                <input type="hidden" value="@node.Id.ToString()" name="nodeId"/>
+                <input class="btn btn-default" type="submit" value="@node.DigitValue @node.StringValue" />
+            }
+        </thead>
+        <thead>
+            <a class="btn btn-default" href="../Tree/AddNode?nodeId=@node.Id">Add node</a>
+        </thead>
+    </table>
+
+
+            
+    if (node.Children != null && node.Children.Count > 0)
+    {
+        foreach (var child in node.Children)
+        {
+        @ShowTree(child)
+        }
+    }
+}
+
+<div class="jumbotron">
+    <p>Extremums: Min - @values.Min, Max - @values.Max, Sum - @values.Sum</p>
+    <p class="lead">@ShowTree(node)</p>
+</div>
+
+@using (Html.BeginForm("StoreToXml", "Tree", FormMethod.Post))
+{
+    <input class="btn btn-default" type="submit" value="Store to XML" style="width:200px"/>
+}
+<br/>
+@using (Html.BeginForm("RestoreFromXml", "Tree", FormMethod.Post))
+{
+    <input class="btn btn-default" type="submit" value="Restore from XML" style="width:200px"/>
+}

@@ -1,0 +1,45 @@
+﻿@model DataTransfer.OrderedValuesResponseDto
+@{
+    ViewBag.Title = "GetNodeList";
+}
+
+<h2>Get Node List</h2>
+
+<div class="jumbotron">
+    @using (Html.BeginForm("GetNodeList", "Tree", FormMethod.Get))
+    {
+        <input type="hidden" value="1" name="order" />
+        <input class="btn btn-default" type="submit" value="Order by Asc" style="width: 200px" />
+    }
+
+    @using (Html.BeginForm("GetNodeList", "Tree", FormMethod.Get))
+    {
+        <input type="hidden" value="2" name="order" />
+        <input class="btn btn-default" type="submit" value="Order by Desc" style="width: 200px" />
+    }
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Digit Value
+            </th>
+            <th>
+                String Value
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var node in Model.Nodes)
+        {
+            <tr>
+                <td style="padding-right: 20px;">@node.Id</td>
+                <td class="mytd">@node.DigitValue</td>
+                <td class="mytd">@node.StringValue</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+﻿@model DataTransfer.CreateTreeDto
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+<div class="jumbotron">
+    I am sorry, but there is no tree for you.
+    If you want - you might create it here
+    @using (Html.BeginForm("CreateTree", "Tree", FormMethod.Post))
+    {
+        <ul>
+            @Html.LabelFor(m => m.DigitValue)
+            <li>@Html.TextBoxFor(m => m.DigitValue)</li>
+            @Html.LabelFor(m => m.StringValue)
+            <li>@Html.TextBoxFor(m => m.StringValue)</li>
+            <input class="btn btn-default" type="submit" value="Create Tree"/>
+        </ul>
+    }
+    <p>or</p>
+    @using (Html.BeginForm("RestoreFromXml", "Tree", FormMethod.Post))
+    {
+        <input class="btn btn-default" type="submit" value="Restore from XML" style="width:200px"/>
+    }
+</div>
+
+

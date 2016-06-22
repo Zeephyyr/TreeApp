@@ -1,0 +1,22 @@
+﻿@using DataTransfer
+@model AddNodeRequestDto
+@{
+    ViewBag.Title = "AddNode";
+    Guid parId = ViewBag.ParentId;
+}
+
+<h2>Add Node</h2>
+
+<div class="jumbotron">
+    @using (Html.BeginForm("AddNode", "Tree", FormMethod.Post))
+    {
+        <ul>
+            @Html.LabelFor(m => m.DigitValue)
+            <li>@Html.TextBoxFor(m => m.DigitValue)</li>
+            @Html.LabelFor(m => m.StringValue)
+            <li>@Html.TextBoxFor(m => m.StringValue)</li>
+            @Html.Hidden("ParentId", parId)
+        </ul>
+        <input class="btn btn-default" type="submit" value="Add Child" />
+    }
+</div>

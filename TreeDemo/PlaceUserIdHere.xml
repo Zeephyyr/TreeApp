@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Root>
+    <Children>
+      <NodeWithoutCycles>
+        <Children>
+          <NodeWithoutCycles>
+            <Children />
+            <ParentId>a0caaefe-98a3-49ca-ba6c-5fea39d81030</ParentId>
+            <DigitValue>5</DigitValue>
+            <StringValue>2son</StringValue>
+            <Generation>2</Generation>
+            <Id>0894a6da-94c5-4021-8ab1-d97f74a0b2ed</Id>
+          </NodeWithoutCycles>
+          <NodeWithoutCycles>
+            <Children />
+            <ParentId>a0caaefe-98a3-49ca-ba6c-5fea39d81030</ParentId>
+            <DigitValue>6</DigitValue>
+            <StringValue>2son</StringValue>
+            <Generation>2</Generation>
+            <Id>1e7549b3-3d0d-4310-a406-3a9dd544ab2e</Id>
+          </NodeWithoutCycles>
+        </Children>
+        <ParentId>14ec1dad-63bb-4f17-bf7f-0c7f2148106e</ParentId>
+        <DigitValue>2</DigitValue>
+        <StringValue>1son</StringValue>
+        <Generation>1</Generation>
+        <Id>a0caaefe-98a3-49ca-ba6c-5fea39d81030</Id>
+      </NodeWithoutCycles>
+      <NodeWithoutCycles>
+        <Children>
+          <NodeWithoutCycles>
+            <Children>
+              <NodeWithoutCycles>
+                <Children />
+                <ParentId>e92c91d7-cfa5-4217-ae9b-01d2902b9f28</ParentId>
+                <DigitValue>12</DigitValue>
+                <StringValue>3son</StringValue>
+                <Generation>3</Generation>
+                <Id>ba6d3cf9-8f17-4542-8346-c954aac414bd</Id>
+              </NodeWithoutCycles>
+              <NodeWithoutCycles>
+                <Children />
+                <ParentId>e92c91d7-cfa5-4217-ae9b-01d2902b9f28</ParentId>
+                <DigitValue>13</DigitValue>
+                <StringValue>3son</StringValue>
+                <Generation>3</Generation>
+                <Id>e97613b4-0975-4615-9efa-1658958e8e34</Id>
+              </NodeWithoutCycles>
+            </Children>
+            <ParentId>0c775548-ce59-4699-9b50-27f1f060fd9f</ParentId>
+            <DigitValue>7</DigitValue>
+            <StringValue>2son</StringValue>
+            <Generation>2</Generation>
+            <Id>e92c91d7-cfa5-4217-ae9b-01d2902b9f28</Id>
+          </NodeWithoutCycles>
+        </Children>
+        <ParentId>14ec1dad-63bb-4f17-bf7f-0c7f2148106e</ParentId>
+        <DigitValue>3</DigitValue>
+        <StringValue>1son</StringValue>
+        <Generation>1</Generation>
+        <Id>0c775548-ce59-4699-9b50-27f1f060fd9f</Id>
+      </NodeWithoutCycles>
+      <NodeWithoutCycles>
+        <Children>
+          <NodeWithoutCycles>
+            <Children />
+            <ParentId>22784d60-c016-4cec-9fbb-c518b6480ff4</ParentId>
+            <DigitValue>8</DigitValue>
+            <StringValue>2son</StringValue>
+            <Generation>2</Generation>
+            <Id>2ce84eb5-9edd-47f8-9f0b-7b2046dda35c</Id>
+          </NodeWithoutCycles>
+          <NodeWithoutCycles>
+            <Children />
+            <ParentId>22784d60-c016-4cec-9fbb-c518b6480ff4</ParentId>
+            <DigitValue>9</DigitValue>
+            <StringValue>2son</StringValue>
+            <Generation>2</Generation>
+            <Id>b0550ab1-9383-4ff7-92ba-e0f93f2104dc</Id>
+          </NodeWithoutCycles>
+          <NodeWithoutCycles>
+            <Children />
+            <ParentId>22784d60-c016-4cec-9fbb-c518b6480ff4</ParentId>
+            <DigitValue>10</DigitValue>
+            <StringValue>2son</StringValue>
+            <Generation>2</Generation>
+            <Id>1d4a1eaa-7cc6-4be5-9d8c-18ea0df802e2</Id>
+          </NodeWithoutCycles>
+          <NodeWithoutCycles>
+            <Children />
+            <ParentId>22784d60-c016-4cec-9fbb-c518b6480ff4</ParentId>
+            <DigitValue>11</DigitValue>
+            <StringValue>2son</StringValue>
+            <Generation>2</Generation>
+            <Id>dc3f5ccb-3840-49a5-ab38-a3c42bd3a2d6</Id>
+          </NodeWithoutCycles>
+        </Children>
+        <ParentId>14ec1dad-63bb-4f17-bf7f-0c7f2148106e</ParentId>
+        <DigitValue>4</DigitValue>
+        <StringValue>1son</StringValue>
+        <Generation>1</Generation>
+        <Id>22784d60-c016-4cec-9fbb-c518b6480ff4</Id>
+      </NodeWithoutCycles>
+    </Children>
+    <ParentId>00000000-0000-0000-0000-000000000000</ParentId>
+    <DigitValue>1</DigitValue>
+    <StringValue>root</StringValue>
+    <Generation>0</Generation>
+    <Id>14ec1dad-63bb-4f17-bf7f-0c7f2148106e</Id>
+  </Root>
+</Tree>
